@@ -1,0 +1,60 @@
+<launch>
+
+    <param name="pcd_address_1" value="/home/jsyang/data/lishui_digital_plaza/lishui/map.pcd"/>
+    <!--param name="pcd_address_2" value="$(find mapshow)/data/ZJU_campus/main2.pcd"/>
+    <param name="pcd_address_3" value="$(find mapshow)/data/ZJU_campus/moon_hall.pcd"/>
+    <param name="pcd_address_4" value="$(find mapshow)/data/ZJU_campus/xiqianyuan.pcd"/>
+    <param name="pcd_address_5" value="$(find mapshow)/data/ZJU_campus/yunfeng.pcd"/>
+    <param name="pcd_address_6" value="$(find mapshow)/data/ZJU_campus/yunfeng_nei.pcd"/>
+    <param name="pcd_address_7" value="$(find mapshow)/data/ZJU_campus/qingxi.pcd"/>
+    <param name="pcd_address_8" value="$(find mapshow)/data/ZJU_campus/qingxi_nei.pcd"/>
+    <param name="pcd_address_9" value="$(find mapshow)/data/ZJU_campus/cuibai.pcd"/>
+    <param name="pcd_address_10" value="$(find mapshow)/data/ZJU_campus/cuibai_nei.pcd"/-->
+
+    <node pkg="mapshow" type="pcd_showoff" name="pcd_showoff" output="screen">
+    </node>
+
+	<node pkg="map_server" type="map_server" name="map_server_1" args="/home/jsyang/data/lishui_digital_plaza/lishui/lishui.yaml" >
+        <remap from="map" to="main1"/>
+    </node>
+
+    <!--node pkg="map_server" type="map_server" name="map_server_2" args="$(find mapshow)/data/ZJU_campus/main2.yaml" >
+        <remap from="map" to="main2"/>
+    </node>
+
+    <node pkg="map_server" type="map_server" name="map_server_3" args="$(find mapshow)/data/ZJU_campus/moon_hall.yaml" >
+        <remap from="map" to="moon_hall"/>
+    </node>
+
+    <node pkg="map_server" type="map_server" name="map_server_4" args="$(find mapshow)/data/ZJU_campus/xiqianyuan.yaml" >
+        <remap from="map" to="xiqianyuan"/>
+    </node>
+
+    <node pkg="map_server" type="map_server" name="map_server_5" args="$(find mapshow)/data/ZJU_campus/yunfeng.yaml" >
+        <remap from="map" to="yunfeng"/>
+    </node>
+
+    <node pkg="map_server" type="map_server" name="map_server_6" args="$(find mapshow)/data/ZJU_campus/yunfeng_nei.yaml" >
+        <remap from="map" to="yunfeng_nei"/>
+    </node>
+
+    <node pkg="map_server" type="map_server" name="map_server_7" args="$(find mapshow)/data/ZJU_campus/qingxi.yaml" >
+        <remap from="map" to="qingxi"/>
+    </node>
+
+    <node pkg="map_server" type="map_server" name="map_server_8" args="$(find mapshow)/data/ZJU_campus/qingxi_nei.yaml" >
+        <remap from="map" to="qingxi_nei"/>
+    </node>
+
+    <node pkg="map_server" type="map_server" name="map_server_9" args="$(find mapshow)/data/ZJU_campus/cuibai.yaml" >
+        <remap from="map" to="cuibai"/>
+    </node>
+
+    <node pkg="map_server" type="map_server" name="map_server_10" args="$(find mapshow)/data/ZJU_campus/cuibai_nei.yaml" >
+        <remap from="map" to="cuibai_nei"/>
+    </node-->
+
+
+	<node pkg="rviz" type="rviz" name="rviz" args ="-d $(find mapshow)/rviz/data.rviz" />
+    
+</launch>
